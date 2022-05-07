@@ -1,0 +1,25 @@
+{% extends 'user_home.html' %}
+{% load static %}
+{% block content %}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">book name</th>
+      <th scope="col">author</th>
+      <th scope="col">category</th>
+
+    </tr>
+  </thead>
+  {% for i in data %}
+    <tr>
+      <th scope="row">{{i.name}}</th>
+      <td>{{i.author}}</td>
+      <td>{{i.category}}</td>
+
+
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

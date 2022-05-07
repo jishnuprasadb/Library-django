@@ -1,0 +1,11 @@
+{% extends 'admin_home.html' %}
+{% block content %}
+
+<form method="post">
+<!-- Security token by Django -->
+{% csrf_token %}
+Are you want to delete this item ?
+<input type="submit" value="Yes" />
+<a href="{% url 'book_view' %}">Cancel </a>
+</form>
+{% endblock %}

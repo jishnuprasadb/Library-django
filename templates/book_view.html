@@ -1,0 +1,27 @@
+{% extends 'user_home.html' %}
+{% load static %}
+{% block content %}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">book name</th>
+      <th scope="col">author</th>
+      <th scope="col">category</th>
+      <th scope="col">update</th>
+      <th scope="col">delete</th>
+    </tr>
+  </thead>
+  {% for i in data %}
+    <tr>
+      <th scope="row">{{i.name}}</th>
+      <td>{{i.author}}</td>
+      <td>{{i.category}}</td>
+      <td><a href="{% url 'book_update' i.id %}">update</a> </td>
+      <td><a href="{% url 'book_delete' i.id %}">delete</a> </td>
+
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
